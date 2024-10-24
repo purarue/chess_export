@@ -26,9 +26,9 @@ The `inspect` command just accepts the file as the first argument, like `chess_e
 The only required argument is your username, the API serves public data and has no serial rate limit
 
 ```
-$ chess_export chessdotcom export seanbreckenridge >data.json
-Requesting https://api.chess.com/pub/player/seanbreckenridge/games/archives
-Requesting https://api.chess.com/pub/player/seanbreckenridge/games/2021/01
+$ chess_export chessdotcom export purarue >data.json
+Requesting https://api.chess.com/pub/player/purarue/games/archives
+Requesting https://api.chess.com/pub/player/purarue/games/2021/01
 ...
 ```
 
@@ -41,8 +41,8 @@ To do that, you can pass the `--user-agent-email` flag or set the `CHESSDOTCOM_U
 Requires your username and a [token](https://lichess.org/account/oauth/token/create?description=lichess+export) (this requires no extra scopes). The token can be provided with the `--token` flag or by setting the `LICHESS_TOKEN` environment variable.
 
 ```
-$ chess_export lichess export seanbreckenridge > data.json
-Requesting https://lichess.org/api/games/user/seanbreckenridge?pgnInJson=true
+$ chess_export lichess export purarue > data.json
+Requesting https://lichess.org/api/games/user/purarue?pgnInJson=true
 ```
 
 ### Example
@@ -50,10 +50,10 @@ Requesting https://lichess.org/api/games/user/seanbreckenridge?pgnInJson=true
 The games are described in [`PGN`](https://en.wikipedia.org/wiki/Portable_Game_Notation) (which can be parsed using the [`chess`](https://python-chess.readthedocs.io/en/latest/pgn.html) package)
 
 ```
-$ chess_export chessdotcom export seanbreckenridge >data.json
-Requesting https://api.chess.com/pub/player/seanbreckenridge/games/archives
-Requesting https://api.chess.com/pub/player/seanbreckenridge/games/2021/01
-Requesting https://api.chess.com/pub/player/seanbreckenridge/games/2021/02
+$ chess_export chessdotcom export purarue >data.json
+Requesting https://api.chess.com/pub/player/purarue/games/archives
+Requesting https://api.chess.com/pub/player/purarue/games/2021/01
+Requesting https://api.chess.com/pub/player/purarue/games/2021/02
 $ chess_export chessdotcom inspect data.json
 
 In [1]: import io, chess.pgn
@@ -79,7 +79,7 @@ The information returned by `chess.com`/`lichess` are slightly different, see th
 ### Tests
 
 ```bash
-git clone 'https://github.com/seanbreckenridge/chess_export'
+git clone 'https://github.com/purarue/chess_export'
 cd ./chess_export
 pip install '.[testing]'
 mypy ./chess_export

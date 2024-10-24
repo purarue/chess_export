@@ -15,7 +15,7 @@ def _user_agent(user_agent_email: Optional[str] = None) -> Dict[str, str]:
         user_agent_email = os.environ["CHESSDOTCOM_USER_AGENT_EMAIL"]
     if user_agent_email:
         return {
-            "User-Agent": f"https://github.com/seanbreckenridge/chess_export {user_agent_email}"
+            "User-Agent": f"https://github.com/purarue/chess_export {user_agent_email}"
         }
     return {}
 
