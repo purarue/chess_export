@@ -1,11 +1,21 @@
 import time
 import json
-from typing import Any, Optional
+from typing import Any, Optional, Union
 from functools import partial
+from pathlib import Path
 from enum import Enum
 
 import click
 import requests
+
+PathIsh = Union[str, Path]
+
+
+def handle_path(path: PathIsh) -> Path:
+    if isinstance(path, str):
+        path = Path(path)
+    return path
+
 
 eprint = partial(click.echo, err=True)
 

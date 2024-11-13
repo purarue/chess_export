@@ -7,7 +7,7 @@ import json
 from datetime import datetime, timezone
 from typing import NamedTuple, Optional, Iterator
 
-from ..common import Json, Result
+from ..common import Json, Result, PathIsh, handle_path
 
 
 class UserRating(NamedTuple):
@@ -77,10 +77,10 @@ class LichessGame(NamedTuple):
         )
 
 
-def from_export(filepath: str) -> Iterator[LichessGame]:
+def from_export(filepath: PathIsh) -> Iterator[LichessGame]:
     """
     Parse a lichess.com game file
     """
-    with open(filepath) as f:
+    with handle_path(filepath).open() as f:
         for gobj in json.load(f):
             yield LichessGame.from_api_response(gobj)

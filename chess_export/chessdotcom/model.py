@@ -7,7 +7,7 @@ import json
 from datetime import datetime, timezone
 from typing import NamedTuple, Optional, Iterator
 
-from ..common import Json, Result
+from ..common import Json, Result, PathIsh, handle_path
 
 
 class ChessDotComUserRating(NamedTuple):
@@ -83,10 +83,10 @@ class ChessDotComGame(NamedTuple):
         )
 
 
-def from_export(filepath: str) -> Iterator[ChessDotComGame]:
+def from_export(filepath: PathIsh) -> Iterator[ChessDotComGame]:
     """
     Parse a chess.com exported file
     """
-    with open(filepath) as f:
+    with handle_path(filepath).open() as f:
         for gobj in json.load(f):
             yield ChessDotComGame.from_api_response(gobj)
