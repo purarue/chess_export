@@ -1,6 +1,6 @@
 # chess_export
 
-[![PyPi version](https://img.shields.io/pypi/v/chess_export.svg)](https://pypi.python.org/pypi/chess_export) [![Python 3.7|3.8|3.9|3.10](https://img.shields.io/pypi/pyversions/chess_export.svg)](https://pypi.python.org/pypi/chess_export) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![PyPi version](https://img.shields.io/pypi/v/chess_export.svg)](https://pypi.python.org/pypi/chess_export) [![Python 3.9|3.10|3.11|3.12|3.13](https://img.shields.io/pypi/pyversions/chess_export.svg)](https://pypi.python.org/pypi/chess_export) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 Export your (or someone else's) chess.com/lichess.org games using their APIs
 
@@ -9,7 +9,7 @@ Export your (or someone else's) chess.com/lichess.org games using their APIs
 
 ## Installation
 
-Requires `python3.8+`
+Requires `python3.9+`
 
 To install with pip, run:
 
