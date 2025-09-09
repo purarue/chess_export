@@ -4,7 +4,8 @@ Request/Export your games from lichess.org
 
 import json
 
-from typing import Iterator, Dict, Any, Optional
+from typing import Any, Optional
+from collections.abc import Iterator
 from urllib.parse import urlencode
 
 from ..common import Json, safe_request
@@ -18,7 +19,7 @@ def get_player_games(
     username: str,
     *,
     token: str,
-    additional_params: Optional[Dict[str, Any]] = None,
+    additional_params: Optional[dict[str, Any]] = None,
 ) -> Iterator[Json]:
     """Returns all accessible games, requires a personal API token"""
     if additional_params is None:

@@ -1,5 +1,5 @@
 import json
-from typing import List, Optional
+from typing import Optional
 
 import click
 
@@ -37,7 +37,7 @@ def chessdotcom_export(username: str, user_agent_email: Optional[str]) -> None:
     """
     Export your chess.com games
     """
-    games: List[Json] = list(chessdotcom_get_games(username, user_agent_email))
+    games: list[Json] = list(chessdotcom_get_games(username, user_agent_email))
     click.echo(json.dumps(games, sort_keys=True))
 
 
@@ -51,7 +51,7 @@ def chessdotcom_inspect(from_file: str) -> None:
     """
     Parse an exported chess.com JSON file and interact with it
     """
-    games: List[ChessDotComGame] = list(chessdotcom_from_export(from_file))  # noqa
+    games: list[ChessDotComGame] = list(chessdotcom_from_export(from_file))  # noqa
     click.secho("Use the 'games' variable to interact", fg="green")
     import IPython  # type: ignore[import]
 
@@ -76,7 +76,7 @@ def lichess_export(username: str, token: str) -> None:
     """
     Export your lichess games
     """
-    games: List[Json] = list(lichess_get_games(username, token=token))
+    games: list[Json] = list(lichess_get_games(username, token=token))
     click.echo(json.dumps(games, sort_keys=True))
 
 
@@ -90,7 +90,7 @@ def lichess_inspect(from_file: str) -> None:
     """
     Parse an exported chess.com JSON file and interact with it
     """
-    games: List[LichessGame] = list(lichess_from_export(from_file))  # noqa
+    games: list[LichessGame] = list(lichess_from_export(from_file))  # noqa
     click.secho("Use the 'games' variable to interact", fg="green")
     import IPython  # type: ignore[import]
 
