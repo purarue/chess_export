@@ -1,6 +1,6 @@
 import time
 import json
-from typing import Any, Optional, Union
+from typing import Any, Union
 from functools import partial
 from pathlib import Path
 from enum import Enum

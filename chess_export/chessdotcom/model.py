@@ -5,7 +5,7 @@ Parse the Game response JSON object from chess.com
 import json
 
 from datetime import datetime, timezone
-from typing import NamedTuple, Optional
+from typing import NamedTuple
 from collections.abc import Iterator
 
 from ..common import Json, Result, PathIsh, handle_path

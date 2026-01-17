@@ -3,7 +3,6 @@ Request/Export your games from chess.com
 """
 
 import os
-from typing import Optional
 from collections.abc import Iterator
 
 from ..common import Json, safe_request_json

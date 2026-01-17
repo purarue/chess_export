@@ -4,7 +4,7 @@ Request/Export your games from lichess.org
 
 import json
 
-from typing import Any, Optional
+from typing import Any
 from collections.abc import Iterator
 from urllib.parse import urlencode
 
