@@ -29,7 +29,7 @@ class ChessDotComUserRating(NamedTuple):
 
 class ChessDotComGame(NamedTuple):
     url: str
-    pgn: Optional[str]
+    pgn: str | None
     fen: str
     time_control: str
     end_time: datetime
@@ -39,7 +39,7 @@ class ChessDotComGame(NamedTuple):
     white: ChessDotComUserRating
     black: ChessDotComUserRating
 
-    def result(self, username: str) -> Optional[Result]:
+    def result(self, username: str) -> Result | None:
         """
         Return the result of the game for the given username
         """

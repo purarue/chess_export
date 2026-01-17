@@ -33,7 +33,7 @@ def _parse_datetime_ms(ms: int) -> datetime:
 
 class LichessGame(NamedTuple):
     game_id: str
-    pgn: Optional[str]
+    pgn: str | None
     moves: str
     start_time: datetime
     end_time: datetime
@@ -42,11 +42,11 @@ class LichessGame(NamedTuple):
     status: str
     variant: str
     perf: str
-    winner: Optional[str]
+    winner: str | None
     white: UserRating
     black: UserRating
 
-    def result(self, username: str) -> Optional[Result]:
+    def result(self, username: str) -> Result | None:
         winner = self.winner
         if winner is None:
             return None

@@ -19,7 +19,7 @@ def get_player_games(
     username: str,
     *,
     token: str,
-    additional_params: Optional[dict[str, Any]] = None,
+    additional_params: dict[str, Any] | None = None,
 ) -> Iterator[Json]:
     """Returns all accessible games, requires a personal API token"""
     if additional_params is None:

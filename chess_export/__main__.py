@@ -33,7 +33,7 @@ def chessdotcom() -> None:
     show_envvar=True,
 )
 @click.argument("username", type=str)
-def chessdotcom_export(username: str, user_agent_email: Optional[str]) -> None:
+def chessdotcom_export(username: str, user_agent_email: str | None) -> None:
     """
     Export your chess.com games
     """

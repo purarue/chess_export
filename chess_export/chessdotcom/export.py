@@ -11,7 +11,7 @@ from ..common import Json, safe_request_json
 BASE_URL = "https://api.chess.com/pub/"
 
 
-def _user_agent(user_agent_email: Optional[str] = None) -> dict[str, str]:
+def _user_agent(user_agent_email: str | None = None) -> dict[str, str]:
     if user_agent_email is None and "CHESSDOTCOM_USER_AGENT_EMAIL" in os.environ:
         user_agent_email = os.environ["CHESSDOTCOM_USER_AGENT_EMAIL"]
     if user_agent_email:
@@ -22,7 +22,7 @@ def _user_agent(user_agent_email: Optional[str] = None) -> dict[str, str]:
 
 
 def get_player_game_archives(
-    username: str, user_agent_email: Optional[str] = None
+    username: str, user_agent_email: str | None = None
 ) -> list[str]:
     """Returns a list of monthly archive URLs for the user"""
     url = BASE_URL + "/".join(("player", username, "games", "archives"))
@@ -33,7 +33,7 @@ def get_player_game_archives(
 
 
 def get_player_games(
-    username: str, user_agent_email: Optional[str] = None
+    username: str, user_agent_email: str | None = None
 ) -> Iterator[Json]:
     """Returns all accessible games, using the monthly archive as the source"""
     for archive_url in get_player_game_archives(username, user_agent_email):

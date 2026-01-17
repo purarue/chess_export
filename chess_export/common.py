@@ -27,8 +27,8 @@ SLEEP_TIME = 0.5
 
 def safe_request(
     url: str,
-    sleep_time: Optional[float] = None,
-    backoff_time: Optional[float] = None,
+    sleep_time: float | None = None,
+    backoff_time: float | None = None,
     requested_count: int = 0,
     **kwargs: Any,
 ) -> requests.Response:
@@ -61,11 +61,11 @@ def safe_request(
 
 def safe_request_json(
     url: str,
-    sleep_time: Optional[float] = None,
-    backoff_time: Optional[float] = None,
+    sleep_time: float | None = None,
+    backoff_time: float | None = None,
     **kwargs: Any,
 ) -> Json:
-    req: Optional[requests.Response] = None
+    req: requests.Response | None = None
     try:
         req = safe_request(url, sleep_time, backoff_time, **kwargs)
         return req.json()
